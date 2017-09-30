@@ -40,4 +40,14 @@ public class MyUtils {
 	public static void writeInputStream2File(InputStream is, File file) throws IOException {
 		writeInputStream2File(is, file, 10240);
 	}
+
+	public static void writrString2File(File file, String string, String charset, boolean isAppend) throws IOException {
+		FileOutputStream fos = new FileOutputStream(file, isAppend);
+		fos.write(string.getBytes(charset));
+		fos.close();
+	}
+
+	public static void writeString2File(String filePath, String string) throws IOException {
+		writrString2File(new File(filePath), string, "UTF-8", false);
+	}
 }
