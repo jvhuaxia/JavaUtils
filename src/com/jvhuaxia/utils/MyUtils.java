@@ -50,4 +50,10 @@ public class MyUtils {
 	public static void writeString2File(String filePath, String string) throws IOException {
 		writrString2File(new File(filePath), string, "UTF-8", false);
 	}
+
+	private static int bytes2int(byte[] bs) {
+		int value;
+		value = (bs[0] & 0xFF) | ((bs[1] & 0xFF) << 8) | ((bs[2] & 0xFF) << 16) | ((bs[3] & 0xFF) << 24);
+		return value;
+	}
 }
