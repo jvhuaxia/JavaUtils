@@ -7,8 +7,6 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import javax.swing.plaf.InputMapUIResource;
-
 public class MyUtils
 {
 
@@ -78,5 +76,41 @@ public class MyUtils
 				return false;
 		}
 		return true;
+	}
+
+	public static String toUpperCase(String string)
+	{
+		StringBuilder resultString = new StringBuilder();
+		for (int i = 0; i < string.length(); i++)
+		{
+			char c = string.charAt(i);
+			if (c >= 'a' && c <= 'z')
+			{
+				c -= 32;
+				resultString.append(c);
+			} else
+			{
+				resultString.append(c);
+			}
+		}
+		return resultString.toString();
+	}
+
+	public static String toLowerCase(String string)
+	{
+		StringBuilder resultString = new StringBuilder();
+		for (int i = 0; i < string.length(); i++)
+		{
+			char c = string.charAt(i);
+			if (c >= 'A' && c <= 'Z')
+			{
+				c += 32;
+				resultString.append(c);
+			} else
+			{
+				resultString.append(c);
+			}
+		}
+		return resultString.toString();
 	}
 }
