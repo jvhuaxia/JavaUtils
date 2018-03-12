@@ -113,4 +113,15 @@ public class MyUtils
 		}
 		return resultString.toString();
 	}
+	public static void bs(int[] is) {
+		for (int i = 0; i < is.length - 1; i++) {
+			for (int j = 0; j < is.length - i - 1; j++) {
+				if (is[j] > is[j + 1]) {
+					int temp = is[j];
+					is[j] = is[j + 1];
+					is[j + 1] = temp;
+				}
+			}
+		}
+	}
 }
